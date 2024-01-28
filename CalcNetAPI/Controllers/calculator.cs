@@ -17,7 +17,7 @@ namespace MyApp.Namespace
         public decimal Multiply(decimal firstNum, decimal secondNum) => firstNum * secondNum;
 
         // Division
-        public decimal Division(decimal firstNum, decimal secondNum) => firstNum / secondNum;
+        public decimal Divide(decimal firstNum, decimal secondNum) => firstNum / secondNum;
 
         // Modulo
         public decimal Modulo(decimal firstNum, decimal secondNum) => firstNum % secondNum;
