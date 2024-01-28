@@ -1,0 +1,6 @@
+@CalcNetAPI_HostAddress = http://localhost:5138
+
+GET {{CalcNetAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
