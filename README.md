@@ -4,6 +4,23 @@
 
 This is a simple calculator API which can do Addition, Subtraction, Multiplication, Division and Modulus.
 
+## Usage
+
+```
+http://<server-ip>:<port>/calculator/<operator-name>?firstNum=<your-first-number>&secondNum=<your-second-number>
+```
+Where:
+
+`<server-ip>`: IP address of server
+
+`<port>`: Port number of server
+
+`<operator-name>`: There are 5 operators: Add, Subtract, Multipy, Divide and Modulo
+
+`<your-first-number>`: Enter your first number
+
+`<your-second-number>`: Enter your second number
+
 ## Components
 
 - [Microsoft.VisualStudio.Web.CodeGeneration.Design](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.CodeGeneration.Design/)
@@ -30,4 +47,5 @@ Create a program to cover all testing cases | :construction:
 ## Future intentions
 
 :sparkles: Add more functions to the API (unit converter, etc.).
+
 :sparkles: Add hardware acceleration feature using FPGA.
