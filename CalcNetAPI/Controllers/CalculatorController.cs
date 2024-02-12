@@ -7,40 +7,53 @@ namespace CalcNetAPI.Controllers;
 [ApiController]
 public class CalculatorController : ControllerBase
 {
-    CalcCommand? cmd;
+    CalcCommand? _cmd;
 
     // Addition
+    [HttpGet]
     public decimal Add(decimal firstNum, decimal secondNum)
     {
-        cmd = new AddCommand();
-        return cmd.Execute(firstNum, secondNum);
+        _cmd = new AddCommand();
+        return _cmd.Execute(firstNum, secondNum);
     }
 
     // Subtraction
+    [HttpGet]
     public decimal Subtract(decimal firstNum, decimal secondNum)
     {
-        cmd = new SubtractCommand();
-        return cmd.Execute(firstNum, secondNum);
+        _cmd = new SubtractCommand();
+        return _cmd.Execute(firstNum, secondNum);
     }
 
     // Multiplication
+    [HttpGet]
     public decimal Multiply(decimal firstNum, decimal secondNum)
     {
-        cmd = new MultiplyCommand();
-        return cmd.Execute(firstNum, secondNum);
+        _cmd = new MultiplyCommand();
+        return _cmd.Execute(firstNum, secondNum);
     }
 
     // Division
-    public decimal Divide(decimal firstNum, decimal secondNum)
+    [HttpGet]
+    public IActionResult Divide(decimal firstNum, decimal secondNum)
     {
-        cmd = new DivideCommand();
-        return cmd.Execute(firstNum, secondNum);
+        if (secondNum == 0)
+        {
+            return BadRequest("Cannot divide by zero.");
+        }
+        _cmd = new DivideCommand();
+        return Ok(_cmd.Execute(firstNum, secondNum));
     }
 
     // Modulo
-    public decimal Modulo(decimal firstNum, decimal secondNum)
+    [HttpGet]
+    public IActionResult Modulo(decimal firstNum, decimal secondNum)
     {
-        cmd = new ModuloCommand();
-        return cmd.Execute(firstNum, secondNum);
+        if (secondNum == 0)
+        {
+            return BadRequest("Cannot divide by zero.");
+        }
+        _cmd = new ModuloCommand();
+        return Ok(_cmd.Execute(firstNum, secondNum));
     }
 }
